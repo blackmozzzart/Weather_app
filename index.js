@@ -14,8 +14,7 @@ search.addEventListener('click', () => {
     if (city === '')
         return;
 
-        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ru&appid=${APIKey}`).then(response => response.json()).then(json => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`).then(response => response.json()).then(json => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ru&appid=${APIKey}`).then(response => response.json()).then(json => {
 
         if (json.cod === '404') {
             container.style.height = '400px'
@@ -78,7 +77,6 @@ search.addEventListener('click', () => {
 });
 
 
-
 currentPosition.addEventListener('click', () => {
 
     const inputLocation = document.getElementById('input');
@@ -87,8 +85,7 @@ currentPosition.addEventListener('click', () => {
         var crd = pos.coords;
         const APIKey = 'e99d48709e3501205c995a3da9c6ecc0';
 
-        // fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&units=metric&lang=ru&appid=${APIKey}`).then(response => response.json()).then(json => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&units=metric&appid=${APIKey}`).then(response => response.json()).then(json => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&units=metric&lang=ru&appid=${APIKey}`).then(response => response.json()).then(json => {
 
             if (json.cod === '404') {
                 container.style.height = '400px'
